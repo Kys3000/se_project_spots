@@ -16,7 +16,7 @@ Working with images in Figma
 
 ## Deployment
 
-This webpage is deployed to Github pages.
+[Deployment Link](https://kys3000.github.io/se_project_spots/)
 
 This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
 
