@@ -14,7 +14,6 @@
 .profile__column {
   display: flex;
   flex-direction: column;
-  max-width: 420px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
 }
@@ -35,7 +34,7 @@
 }
 
 .profile__description {
-  margin: 0 0 114px;
+  margin: 0;
   padding: 0;
   max-width: 420px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
@@ -52,7 +51,7 @@
 }
 
 .profile__edit-btn {
-  margin: 0;
+  margin-top: auto;
   display: flex;
   gap: 8px;
   height: 16px;
