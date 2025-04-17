@@ -73,7 +73,7 @@
   opacity: 1;
 }
 
-.profile__add-btn {
+.profile__new-post-btn {
   margin-left: auto;
   margin-top: auto;
   justify-content: center;
@@ -96,7 +96,7 @@
   transition: 0.5s ease-in;
 }
 
-.profile__add-btn:hover {
+.profile__new-post-btn:hover {
   opacity: 0.8;
 }
 
@@ -135,7 +135,7 @@
     margin: 0;
   }
 
-  .profile__add-btn {
+  .profile__new-post-btn {
     margin: 0;
     width: 100%;
   }
