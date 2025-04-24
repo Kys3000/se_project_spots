@@ -11,11 +11,11 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
 
 editProfileBtn.addEventListener("click", function () {
   editProfileModal.classList.add("modal_is-opened");
+  editProfileNameInput.value = profileNameEl.textContent;
+  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileNameInput.value = profileNameEl.textContent;
-  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   editProfileModal.classList.remove("modal_is-opened");
 });
 
@@ -37,8 +37,6 @@ newPostBtn.addEventListener("click", function () {
 });
 
 newPostCloseBtn.addEventListener("click", function () {
-  newPostLinkInput.value = cardLinkEl.textContent;
-  newPostCaptionInput.value = cardCaptionEl.textContent;
   newPostModal.classList.remove("modal_is-opened");
 });
 
