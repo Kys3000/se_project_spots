@@ -80,7 +80,8 @@
 }
 
 .modal__submit-btn:hover {
-  opacity: 1;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .modal__input {
