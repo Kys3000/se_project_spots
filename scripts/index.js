@@ -72,9 +72,6 @@ const previewModalCloseBtn = previewModal.querySelector(".modal__close");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewCaption = previewModal.querySelector(".modal__caption");
 
-const cardLinkEl = document.querySelector(".card__image");
-const cardCaptionEl = document.querySelector(".card__title");
-
 const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
@@ -150,6 +147,8 @@ newPostForm.addEventListener("submit", function (evt) {
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
   closeModal(newPostModal);
+
+  newPostForm.reset();
 });
 
 initialCards.forEach(function (item) {

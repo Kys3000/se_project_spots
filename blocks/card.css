@@ -86,7 +86,6 @@
   .card {
     margin: auto;
     flex-direction: center;
-    align-items: center;
   }
 
   .card__image {
