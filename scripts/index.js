@@ -69,12 +69,25 @@ const cardTemplate = document
 const cardList = document.querySelector(".cards__list");
 
 // Modal Functions
+
+function handleEscClose(evt) {
+  console.log("keydown", evt.key);
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 // Event Listeners for Profile Edit Modal
