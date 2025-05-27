@@ -11,6 +11,7 @@ const showInputError = (formElement, inputElement, errorMsg, config) => {
   const errorMsgElement = formElement.querySelector(
     `#${inputElement.id}-error`
   );
+  if (!errorMsgElement) return;
   inputElement.classList.add(config.inputErrorClass);
   errorMsgElement.textContent = errorMsg;
   errorMsgElement.classList.add(config.errorClass);
@@ -44,14 +45,14 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonElement, config) => {
   if (hasInvalidInput(inputList)) {
-    disablebutton(buttonElement, config);
+    disableButton(buttonElement, config);
   } else {
     buttonElement.disabled = false;
     buttonElement.classList.remove(config.inactiveButtonClass);
   }
 };
 
-const disablebutton = (buttonElement, config) => {
+const disableButton = (buttonElement, config) => {
   buttonElement.disabled = true;
   buttonElement.classList.add(config.inactiveButtonClass);
 };
@@ -60,7 +61,9 @@ const resetValidation = (formElement, config) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)
   );
-  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+  const buttonElement = formElement.querySelectorAll(
+    config.submitButtonSelector
+  );
 
   inputList.forEach((input) => {
     hideInputError(formElement, input, config);

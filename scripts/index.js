@@ -102,30 +102,24 @@ editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
-editProfileForm.addEventListener(
-  "submit",
-  function handleEditProfileSubmit(evt) {
-    evt.preventDefault();
-    profileNameEl.textContent = editProfileNameInput.value;
-    profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-    disableButton(
-      editProfileForm.querySelector(settings.submitButtonSelector),
-      settings
-    );
-    closeModal(editProfileModal);
-  }
-);
+editProfileBtn.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  disableButton(editProfileBtn.querySelector(settings.inactiveButtonClass));
+  closeModal(editProfileModal);
+});
 
+// Event Listeners for New Post Modal
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
 
   cardLinkEl.textContent = newPostLinkInput.value;
   cardCaptionEl.textContent = newPostCaptionInput.value;
-  disableButton(newPostSubmitBtn, settings);
+  disableButton(newPostSubmitBtn.querySelector(settings.inactiveButtonClass));
   closeModal(newPostModal);
 }
 
-// Event Listeners for New Post Modal
 newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
   resetValidation(newPostForm, settings);
@@ -141,6 +135,8 @@ newPostForm.addEventListener("submit", function (evt) {
     name: newPostCaptionInput.value,
     link: newPostLinkInput.value,
   };
+
+  disableButton(newPostSubmitBtn, settings);
 
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
