@@ -61,15 +61,11 @@ const resetValidation = (formElement, config) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)
   );
-  const buttonElement = formElement.querySelectorAll(
-    config.submitButtonSelector
-  );
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
   inputList.forEach((input) => {
     hideInputError(formElement, input, config);
   });
-
-  toggleButtonState(inputList, buttonElement, config);
 };
 
 const setEventListeners = (formElement, config) => {

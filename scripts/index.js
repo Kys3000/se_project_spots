@@ -71,7 +71,6 @@ const cardList = document.querySelector(".cards__list");
 // Modal Functions
 
 function handleEscClose(evt) {
-  console.log("keydown", evt.key);
   if (evt.key === "Escape") {
     const openedModal = document.querySelector(".modal_is-opened");
     if (openedModal) {
@@ -111,18 +110,9 @@ editProfileBtn.addEventListener("submit", function (evt) {
 });
 
 // Event Listeners for New Post Modal
-function handleAddCardSubmit(evt) {
-  evt.preventDefault();
-
-  cardLinkEl.textContent = newPostLinkInput.value;
-  cardCaptionEl.textContent = newPostCaptionInput.value;
-  disableButton(newPostSubmitBtn.querySelector(settings.inactiveButtonClass));
-  closeModal(newPostModal);
-}
 
 newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
-  resetValidation(newPostForm, settings);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
@@ -183,4 +173,12 @@ function getCardElement(data) {
 initialCards.forEach(function (item) {
   const cardElement = getCardElement(item);
   cardList.append(cardElement);
+});
+
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("mousedown", function (evt) {
+    if (evt.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
 });
