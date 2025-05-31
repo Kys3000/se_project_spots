@@ -101,11 +101,10 @@ editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
-editProfileBtn.addEventListener("submit", function (evt) {
+editProfileForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  disableButton(editProfileBtn.querySelector(settings.inactiveButtonClass));
   closeModal(editProfileModal);
 });
 
